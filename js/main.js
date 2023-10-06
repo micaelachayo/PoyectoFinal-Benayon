@@ -1,6 +1,3 @@
-
-
-
 //funciones
 function prendasAbuscar() {
   prenda = prompt(`¿Qué prenda busca para su ${categoria}? (Ingrese "nada" para terminar)`);
