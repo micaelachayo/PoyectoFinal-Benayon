@@ -1,0 +1,56 @@
+@import "../global/variables";
+@import "../global/mapas";
+@import "../global/mixin";
+
+header {
+  background-color: map-get($color-paleta, "headerFooter");
+
+  div {
+    h1 {
+      background: $bg-gradiante;
+      -webkit-background-clip: text;
+      color: transparent;
+      font-family: $font-titulo;
+      @include filter;
+
+      &:hover {
+        background: $gradiante-hover;
+        -webkit-background-clip: text;
+        color: transparent;
+      }
+    }
+  }
+  .header-img {
+    @include filter;
+  }
+}
+nav {
+  background-color: map-get($color-paleta, "nav");
+
+  li {
+    .despliegue {
+      .dropdown-menu {
+        background: map-get($color-paleta, "nav");
+
+        .dropdown-item {
+          &:hover {
+            color: map-get($color-paleta, "hover");
+            font-size: large;
+          }
+        }
+      }
+    }
+  }
+  .boton {
+    background-color: map-get($color-paleta, "nav");
+    @include filter;
+    &:hover {
+      background: $bg-gradiante;
+    }
+  }
+  .nav-link {
+    &:hover {
+      color: map-get($color-paleta, "hover");
+    }
+  }
+}

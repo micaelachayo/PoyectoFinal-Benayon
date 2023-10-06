@@ -1,0 +1,26 @@
+@import "../global/variables";
+@import "../global/mapas";
+@import "../global/mixin";
+
+@for $i from 1 through 8 {
+  .card-#{$i} {
+    width: $card-width * 2;
+    @include filter;
+
+    img {
+      @include imagenes(1.2);
+    }
+  }
+}
+
+@each $color, $valor in $boton-card {
+  .#{$color} {
+    background-color: $valor;
+    padding: 0.7rem;
+    border-radius: 100%;
+    margin: 5px;
+    &:hover {
+      background: $estampados;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+@font-face {
+  font-family: stayTrueDemo;
+  src: url(../fonts/StaytrueDemo-Italic.otf);
+}
+//   header
+@import "./layout/header";
+
+// animaciones
+@import "./animaciones/animaciones";
+
+// main
+@import "./layout/main";
+
+// Card de prendas
+@import "./componentes/cardArticle";
+
+// footer
+@import "./layout/footer";
+
+// media query
+@import "./layout/medias";
+
+

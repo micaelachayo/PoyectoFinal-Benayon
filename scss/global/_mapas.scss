@@ -1,0 +1,29 @@
+// colores de las prendas
+$boton-card: (
+  "blue": rgb(0, 140, 255),
+  "white": rgb(243, 226, 203),
+  "red": red,
+  "pink": pink,
+  "yellow": yellow,
+  "black": rgba(31, 29, 29, 0.925),
+  "orange": orange,
+  "green": green,
+  "brown": brown,
+  "grey": grey,
+);
+
+// breakpoints -medidas img
+$width-img: (
+  "360-767": 22.5rem,
+  "992-1200": 30rem,
+  "1201-1260": 35rem,
+);
+
+// Colores palet)a
+$color-paleta: (
+  "headerFooter": rgba(221, 199, 205, 0.918),
+  "nav":  rgb(164, 200, 206),
+  "titulo": rgb(79, 159, 173),
+  "hover":  rgb(114, 156, 163),
+  "main": rgb(243, 237, 237),
+);

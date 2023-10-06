@@ -1,0 +1,48 @@
+@import "./mapas";
+
+$font-titulo: stayTrueDemo;
+
+$card-width: 9rem;
+
+$bg-gradiante: linear-gradient(
+  to bottom,
+  map-get($color-paleta, "titulo") 40%,
+  rgb(215, 249, 250)
+);
+
+$gradiante-hover: linear-gradient(
+  to top,
+  map-get($color-paleta, "headerFooter") 40%,
+  rgb(192, 46, 41)
+);
+
+$oferta-color: rgb(190, 7, 7);
+
+$estampados: linear-gradient(
+      45deg,
+      map-get($color-paleta, "nav"),
+      45px,
+      transparent 45px
+    )
+    64px 64px,
+  linear-gradient(
+    45deg,
+    map-get($color-paleta, "nav"),
+    45px,
+    transparent 45px,
+    transparent 91px,
+    map-get($color-paleta, "headerFooter") 91px,
+    map-get($color-paleta, "headerFooter") 135px,
+    transparent 135px
+  ),
+  linear-gradient(
+    -45deg,
+    map-get($color-paleta, "nav") 23px,
+    transparent 23px,
+    transparent 68px,
+    map-get($color-paleta, "nav") 68px,
+    map-get($color-paleta, "nav") 113px,
+    transparent 113px,
+    transparent 158px,
+    map-get($color-paleta, "nav") 158px
+  );

@@ -1,0 +1,10 @@
+@import "../global/mapas";
+
+footer {
+  background-color: map-get($color-paleta, "headerFooter");
+
+  img {
+    @include imagenes(1.3);
+    @include filter;
+  }
+}

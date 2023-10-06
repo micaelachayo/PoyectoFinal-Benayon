@@ -1,0 +1,350 @@
+@font-face {
+  font-family: stayTrueDemo;
+  src: url(../fonts/StaytrueDemo-Italic.otf);
+}
+header {
+  background-color: rgba(221, 199, 205, 0.918);
+}
+header div h1 {
+  background: linear-gradient(to bottom, rgb(79, 159, 173) 40%, rgb(215, 249, 250));
+  -webkit-background-clip: text;
+  color: transparent;
+  font-family: stayTrueDemo;
+  filter: drop-shadow(1px 1px 1px gray);
+}
+header div h1:hover {
+  background: linear-gradient(to top, rgba(221, 199, 205, 0.918) 40%, rgb(192, 46, 41));
+  -webkit-background-clip: text;
+  color: transparent;
+}
+header .header-img {
+  filter: drop-shadow(1px 1px 1px gray);
+}
+
+nav {
+  background-color: rgb(164, 200, 206);
+}
+nav li .despliegue .dropdown-menu {
+  background: rgb(164, 200, 206);
+}
+nav li .despliegue .dropdown-menu .dropdown-item:hover {
+  color: rgb(114, 156, 163);
+  font-size: large;
+}
+nav .boton {
+  background-color: rgb(164, 200, 206);
+  filter: drop-shadow(1px 1px 1px gray);
+}
+nav .boton:hover {
+  background: linear-gradient(to bottom, rgb(79, 159, 173) 40%, rgb(215, 249, 250));
+}
+nav .nav-link:hover {
+  color: rgb(114, 156, 163);
+}
+
+.oferta {
+  background: linear-gradient(45deg, rgb(164, 200, 206), 45px, transparent 45px) 64px 64px, linear-gradient(45deg, rgb(164, 200, 206), 45px, transparent 45px, transparent 91px, rgba(221, 199, 205, 0.918) 91px, rgba(221, 199, 205, 0.918) 135px, transparent 135px), linear-gradient(-45deg, rgb(164, 200, 206) 23px, transparent 23px, transparent 68px, rgb(164, 200, 206) 68px, rgb(164, 200, 206) 113px, transparent 113px, transparent 158px, rgb(164, 200, 206) 158px);
+  background-color: rgb(240, 243, 228);
+  background-size: 128px 128px;
+  height: 22px;
+}
+.oferta p {
+  animation-duration: 10s;
+  animation-name: slidein;
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-fill-mode: both;
+  color: rgb(190, 7, 7);
+  filter: drop-shadow(1px 1px 1px gray);
+}
+
+@keyframes slidein {
+  from {
+    transform: translateX(20%);
+    width: 50%;
+  }
+  to {
+    transform: translateX(100%);
+    width: 50%;
+  }
+}
+.animate__animated {
+  animation-duration: 5s;
+  animation-iteration-count: 2;
+  animation-delay: 3s;
+}
+
+main {
+  background-color: rgb(243, 237, 237);
+}
+main .card-principal {
+  transition: 1s;
+  object-fit: cover;
+}
+main .card-principal:hover {
+  transform: scale(0.9);
+}
+main .card-principal .img-principal {
+  filter: drop-shadow(10px 10px 10px grey);
+}
+main .filtro button {
+  filter: drop-shadow(1px 1px 1px gray);
+  background-color: rgb(164, 200, 206);
+}
+main .filtro button:hover {
+  transform: rotate(12deg);
+}
+main h2 {
+  color: rgb(79, 159, 173);
+}
+main h4 {
+  color: rgb(79, 159, 173);
+}
+
+.card-1 {
+  width: 18rem;
+  filter: drop-shadow(1px 1px 1px gray);
+}
+.card-1 img {
+  transition: 1s;
+  object-fit: cover;
+}
+.card-1 img:hover {
+  transform: scale(1.2);
+}
+
+.card-2 {
+  width: 18rem;
+  filter: drop-shadow(1px 1px 1px gray);
+}
+.card-2 img {
+  transition: 1s;
+  object-fit: cover;
+}
+.card-2 img:hover {
+  transform: scale(1.2);
+}
+
+.card-3 {
+  width: 18rem;
+  filter: drop-shadow(1px 1px 1px gray);
+}
+.card-3 img {
+  transition: 1s;
+  object-fit: cover;
+}
+.card-3 img:hover {
+  transform: scale(1.2);
+}
+
+.card-4 {
+  width: 18rem;
+  filter: drop-shadow(1px 1px 1px gray);
+}
+.card-4 img {
+  transition: 1s;
+  object-fit: cover;
+}
+.card-4 img:hover {
+  transform: scale(1.2);
+}
+
+.card-5 {
+  width: 18rem;
+  filter: drop-shadow(1px 1px 1px gray);
+}
+.card-5 img {
+  transition: 1s;
+  object-fit: cover;
+}
+.card-5 img:hover {
+  transform: scale(1.2);
+}
+
+.card-6 {
+  width: 18rem;
+  filter: drop-shadow(1px 1px 1px gray);
+}
+.card-6 img {
+  transition: 1s;
+  object-fit: cover;
+}
+.card-6 img:hover {
+  transform: scale(1.2);
+}
+
+.card-7 {
+  width: 18rem;
+  filter: drop-shadow(1px 1px 1px gray);
+}
+.card-7 img {
+  transition: 1s;
+  object-fit: cover;
+}
+.card-7 img:hover {
+  transform: scale(1.2);
+}
+
+.card-8 {
+  width: 18rem;
+  filter: drop-shadow(1px 1px 1px gray);
+}
+.card-8 img {
+  transition: 1s;
+  object-fit: cover;
+}
+.card-8 img:hover {
+  transform: scale(1.2);
+}
+
+.blue {
+  background-color: rgb(0, 140, 255);
+  padding: 0.7rem;
+  border-radius: 100%;
+  margin: 5px;
+}
+.blue:hover {
+  background: linear-gradient(45deg, rgb(164, 200, 206), 45px, transparent 45px) 64px 64px, linear-gradient(45deg, rgb(164, 200, 206), 45px, transparent 45px, transparent 91px, rgba(221, 199, 205, 0.918) 91px, rgba(221, 199, 205, 0.918) 135px, transparent 135px), linear-gradient(-45deg, rgb(164, 200, 206) 23px, transparent 23px, transparent 68px, rgb(164, 200, 206) 68px, rgb(164, 200, 206) 113px, transparent 113px, transparent 158px, rgb(164, 200, 206) 158px);
+}
+
+.white {
+  background-color: rgb(243, 226, 203);
+  padding: 0.7rem;
+  border-radius: 100%;
+  margin: 5px;
+}
+.white:hover {
+  background: linear-gradient(45deg, rgb(164, 200, 206), 45px, transparent 45px) 64px 64px, linear-gradient(45deg, rgb(164, 200, 206), 45px, transparent 45px, transparent 91px, rgba(221, 199, 205, 0.918) 91px, rgba(221, 199, 205, 0.918) 135px, transparent 135px), linear-gradient(-45deg, rgb(164, 200, 206) 23px, transparent 23px, transparent 68px, rgb(164, 200, 206) 68px, rgb(164, 200, 206) 113px, transparent 113px, transparent 158px, rgb(164, 200, 206) 158px);
+}
+
+.red {
+  background-color: red;
+  padding: 0.7rem;
+  border-radius: 100%;
+  margin: 5px;
+}
+.red:hover {
+  background: linear-gradient(45deg, rgb(164, 200, 206), 45px, transparent 45px) 64px 64px, linear-gradient(45deg, rgb(164, 200, 206), 45px, transparent 45px, transparent 91px, rgba(221, 199, 205, 0.918) 91px, rgba(221, 199, 205, 0.918) 135px, transparent 135px), linear-gradient(-45deg, rgb(164, 200, 206) 23px, transparent 23px, transparent 68px, rgb(164, 200, 206) 68px, rgb(164, 200, 206) 113px, transparent 113px, transparent 158px, rgb(164, 200, 206) 158px);
+}
+
+.pink {
+  background-color: pink;
+  padding: 0.7rem;
+  border-radius: 100%;
+  margin: 5px;
+}
+.pink:hover {
+  background: linear-gradient(45deg, rgb(164, 200, 206), 45px, transparent 45px) 64px 64px, linear-gradient(45deg, rgb(164, 200, 206), 45px, transparent 45px, transparent 91px, rgba(221, 199, 205, 0.918) 91px, rgba(221, 199, 205, 0.918) 135px, transparent 135px), linear-gradient(-45deg, rgb(164, 200, 206) 23px, transparent 23px, transparent 68px, rgb(164, 200, 206) 68px, rgb(164, 200, 206) 113px, transparent 113px, transparent 158px, rgb(164, 200, 206) 158px);
+}
+
+.yellow {
+  background-color: yellow;
+  padding: 0.7rem;
+  border-radius: 100%;
+  margin: 5px;
+}
+.yellow:hover {
+  background: linear-gradient(45deg, rgb(164, 200, 206), 45px, transparent 45px) 64px 64px, linear-gradient(45deg, rgb(164, 200, 206), 45px, transparent 45px, transparent 91px, rgba(221, 199, 205, 0.918) 91px, rgba(221, 199, 205, 0.918) 135px, transparent 135px), linear-gradient(-45deg, rgb(164, 200, 206) 23px, transparent 23px, transparent 68px, rgb(164, 200, 206) 68px, rgb(164, 200, 206) 113px, transparent 113px, transparent 158px, rgb(164, 200, 206) 158px);
+}
+
+.black {
+  background-color: rgba(31, 29, 29, 0.925);
+  padding: 0.7rem;
+  border-radius: 100%;
+  margin: 5px;
+}
+.black:hover {
+  background: linear-gradient(45deg, rgb(164, 200, 206), 45px, transparent 45px) 64px 64px, linear-gradient(45deg, rgb(164, 200, 206), 45px, transparent 45px, transparent 91px, rgba(221, 199, 205, 0.918) 91px, rgba(221, 199, 205, 0.918) 135px, transparent 135px), linear-gradient(-45deg, rgb(164, 200, 206) 23px, transparent 23px, transparent 68px, rgb(164, 200, 206) 68px, rgb(164, 200, 206) 113px, transparent 113px, transparent 158px, rgb(164, 200, 206) 158px);
+}
+
+.orange {
+  background-color: orange;
+  padding: 0.7rem;
+  border-radius: 100%;
+  margin: 5px;
+}
+.orange:hover {
+  background: linear-gradient(45deg, rgb(164, 200, 206), 45px, transparent 45px) 64px 64px, linear-gradient(45deg, rgb(164, 200, 206), 45px, transparent 45px, transparent 91px, rgba(221, 199, 205, 0.918) 91px, rgba(221, 199, 205, 0.918) 135px, transparent 135px), linear-gradient(-45deg, rgb(164, 200, 206) 23px, transparent 23px, transparent 68px, rgb(164, 200, 206) 68px, rgb(164, 200, 206) 113px, transparent 113px, transparent 158px, rgb(164, 200, 206) 158px);
+}
+
+.green {
+  background-color: green;
+  padding: 0.7rem;
+  border-radius: 100%;
+  margin: 5px;
+}
+.green:hover {
+  background: linear-gradient(45deg, rgb(164, 200, 206), 45px, transparent 45px) 64px 64px, linear-gradient(45deg, rgb(164, 200, 206), 45px, transparent 45px, transparent 91px, rgba(221, 199, 205, 0.918) 91px, rgba(221, 199, 205, 0.918) 135px, transparent 135px), linear-gradient(-45deg, rgb(164, 200, 206) 23px, transparent 23px, transparent 68px, rgb(164, 200, 206) 68px, rgb(164, 200, 206) 113px, transparent 113px, transparent 158px, rgb(164, 200, 206) 158px);
+}
+
+.brown {
+  background-color: brown;
+  padding: 0.7rem;
+  border-radius: 100%;
+  margin: 5px;
+}
+.brown:hover {
+  background: linear-gradient(45deg, rgb(164, 200, 206), 45px, transparent 45px) 64px 64px, linear-gradient(45deg, rgb(164, 200, 206), 45px, transparent 45px, transparent 91px, rgba(221, 199, 205, 0.918) 91px, rgba(221, 199, 205, 0.918) 135px, transparent 135px), linear-gradient(-45deg, rgb(164, 200, 206) 23px, transparent 23px, transparent 68px, rgb(164, 200, 206) 68px, rgb(164, 200, 206) 113px, transparent 113px, transparent 158px, rgb(164, 200, 206) 158px);
+}
+
+.grey {
+  background-color: grey;
+  padding: 0.7rem;
+  border-radius: 100%;
+  margin: 5px;
+}
+.grey:hover {
+  background: linear-gradient(45deg, rgb(164, 200, 206), 45px, transparent 45px) 64px 64px, linear-gradient(45deg, rgb(164, 200, 206), 45px, transparent 45px, transparent 91px, rgba(221, 199, 205, 0.918) 91px, rgba(221, 199, 205, 0.918) 135px, transparent 135px), linear-gradient(-45deg, rgb(164, 200, 206) 23px, transparent 23px, transparent 68px, rgb(164, 200, 206) 68px, rgb(164, 200, 206) 113px, transparent 113px, transparent 158px, rgb(164, 200, 206) 158px);
+}
+
+footer {
+  background-color: rgba(221, 199, 205, 0.918);
+}
+footer img {
+  transition: 1s;
+  object-fit: cover;
+  filter: drop-shadow(1px 1px 1px gray);
+}
+footer img:hover {
+  transform: scale(1.3);
+}
+
+@media (min-width: 360px) and (max-width: 767px) {
+  .img-principal {
+    width: 22.5rem;
+  }
+  .img-ninas {
+    height: min-content;
+  }
+  .parrafo-contacto {
+    display: none;
+  }
+  .input-buscador {
+    display: none;
+  }
+  .inicio {
+    display: none;
+  }
+  .cuerpo-humano {
+    display: none;
+  }
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+  .img-principal {
+    width: 30rem;
+  }
+  .img-ninas {
+    height: min-content;
+  }
+}
+@media (min-width: 1201px) and (max-width: 1260px) {
+  .img-principal {
+    width: 35rem;
+  }
+  .img-ninas {
+    height: min-content;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

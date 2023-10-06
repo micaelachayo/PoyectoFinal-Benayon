@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Descubre Dasa, la tienda online líder en moda infantil. Encuentra prendas de alta calidad, 
+      diseño único y precios accesibles para vestir a tus pequeños con estilo y comodidad, 
+      donde todo está en oferta 2x1. 
+      ¡Dasa es tu destino para vestir  a tus hijos con confianza y estilo!"
+    />
+    <meta name="keywords" content="moda, ropa, estilo, calidad" />
+    <link rel="shortcut icon" href="./assets/iconos/favicon.svg" />
+    <link rel="stylesheet" href="./css/bootstrap/bootstrap.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Dasa Sitio oficial | Ropa infantil</title>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="container-fluid header">
+      <div class="row">
+        <div
+          class="col-3 col-md-3 d-flex justify-content-center align-items-center"
+        >
+          <!-- iconos de la izq -->
+          <img
+            class="header-img me-1"
+            src="./assets/iconos/user.svg"
+            alt="usuario"
+            width="28"
+            height="28"
+          />
+          <img
+            class="header-img me-1"
+            src="./assets/iconos/corazon.svg"
+            alt="likes"
+            width="28"
+            height="28"
+          />
+
+          <img
+            class="header-img"
+            src="./assets/iconos/carrito.svg"
+            alt="carrito"
+            width="28"
+            height="28"
+          />
+        </div>
+
+        <!-- titulo -->
+        <div
+          data-aos="fade-right"
+          data-aos-duration="1000"
+          class="col-7 col-md-6 text-center"
+        >
+          <h1 class="display-3 pt-1 me-xxl-5 fw-bold text">DASA</h1>
+        </div>
+
+        <!-- search -->
+        <div class="col-2 col-md-3 text-end mt-4 header-buscador">
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2 w-50 shadow input-buscador"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <img
+              class="me-5 header-img pb-2"
+              src="./assets/iconos/busqueda-de-lupa.svg"
+              alt="buscador"
+              width="28"
+              height="28"
+            />
+          </form>
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- Navbar -->
+        <nav class="navbar">
+          <div class="col-12 pe-4 ">
+            <ul class="d-flex justify-content-center list-unstyled pt-3">
+
+              <li>
+                <div class="btn-group despliegue">
+                  <button
+                    type="button"
+                    class="py-1 px-3 px-md-4 rounded-pill boton"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Tienda
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a class="dropdown-item" href="./pages/bebes.html"
+         
+                        >Bebés
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="./pages/nenas.html"
+                        >Niños</a
+                      >
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="./pages/nenes.html"
+                        >Niñas</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="btn-group despliegue ">
+                  <button
+                    type="button"
+                    class="py-1 px-2 px-md-3 rounded-pill boton"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Nosotros
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a class="dropdown-item" href="./pages/contacto.html"
+                        >Contacto</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li >
+                <div class="btn-group despliegue ">
+                <button
+                  type="button"
+                  class="py-1 px-3 px-md-4 rounded-pill boton"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Ayuda
+                </button>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="./pages/como-comprar.html"
+                      >Como comprar?</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="./pages/como-comprar.html"
+                      >Tabla de talles</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Aside oferta -->
+    <aside>
+      <div class="oferta">
+        <p class="oferta-p text-center fw-bold">
+          SALE 2X1 EN TODAS LAS PRENDAS!
+        </p>
+      </div>
+    </aside>
+
+    <!-- main -->
+    <main class="container-fluid main-principal">
+      <div class="row pt-3">
+        <!-- sector ninos -->
+        <section
+          class="col-12 col-lg-6 d-flex flex-column align-items-center card-principal"
+        >
+          <div>
+            <a href="./pages/nenes.html">
+              <img
+                class="ps-2 img-principal mb-2"
+                src="./assets/imgNinos.webp"
+                alt="img-ninos"
+              />
+            </a>
+          </div>
+
+          <div class="text-center">
+            <p class="descripcion-texto">
+           Entrá a conocer!, todo lo que necesitas para tu hijo lo encontrás acá. 
+            </p>
+          </div>
+        </section>
+        <!-- sector nenas -->
+        <section
+          class="col-12 col-lg-6 d-flex flex-column align-items-center card-principal"
+        >
+          <div>
+            <a href="./pages/nenas.html">
+              <img
+                src="./assets/imgNinas.webp"
+                class="img-principal img-ninas mb-1 row-gap-5 p-2 pt-lg-0 ps-lg-0"
+                alt="img-ninas"
+                height="418"
+              />
+            </a>
+          </div>
+
+          <div class="text-center">
+            <p>
+              Conocé todas nuestras prendas de invierno, que tenemos para tu
+              hija.
+            </p>
+          </div>
+        </section>
+      </div>
+
+      <div class="row">
+        <!-- sector bebes -->
+        <section
+          class="col-12 d-flex flex-column align-items-center pb-5 card-principal"
+        >
+          <div>
+            <a href="./pages/bebes.html">
+              <img
+                src="./assets/imgBebe.webp"
+                class="img-principal row-gap-5 p-2 mb-1"
+                alt="img-bebes"
+              />
+            </a>
+          </div>
+
+          <div class="text-center">
+            <p>
+              Encontrá, en nuestro sector de bebés: bodies, pantalones, remeras y mucho más!
+            </p>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- footer -->
+
+    <footer class="position-fixed bottom-0 container-fluid footer">
+      <div class="row ps-5">
+        <div class="col-3 d-flex">
+          <a href="https://www.facebook.com" target="_blank"
+            ><img
+              src="./assets/iconos/facebook.svg"
+              alt="facebook"
+              width="28"
+              height="28"
+          /></a>
+          <p class="parrafo-contacto">Dasa tu tienda</p>
+        </div>
+
+        <div class="col-3 d-flex footer__boxGmail">
+          <a href="https://www.gmail.com" target="_blank">
+            <img
+              src="./assets/iconos/gmail.svg"
+              alt="gmail"
+              width="28"
+              height="28"
+          /></a>
+          <p class="parrafo-contacto">dasa@gmail.com</p>
+        </div>
+
+        <div class="col-3 d-flex">
+          <a href="https://www.instagram.com" target="_blank">
+            <img
+              src="./assets/iconos/instagram.svg"
+              alt="dasaMail"
+              width="28"
+              height="28"
+          /></a>
+          <p class="parrafo-contacto">@dasa</p>
+        </div>
+
+        <div class="col-3 d-flex">
+          <a
+            href="https://api.whatsapp.com/send/?phone=5491130340087"
+            target="_blank"
+          >
+            <img
+              src="./assets/iconos/whatsapp.svg"
+              alt="wsp"
+              width="28"
+              height="28"
+          /></a>
+          <p class="parrafo-contacto">+54 911 2444 4444</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
