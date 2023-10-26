@@ -1,5 +1,3 @@
-
-
 //VARIABES
 let montoTotal = 0;
 let carrito = [];
@@ -44,7 +42,7 @@ const respuestaCarrito = (prenda, precio) => {
   if (respuesta.toLowerCase() === "si") {
     carrito.forEach((ropa) => console.log(ropa));
     carrito.push(`${prenda} = $${precio}`);
-    alert(`Su prenda ${prenda} fue añadida al carrito`);
+    alert(`Su prenda "${prenda}" fue añadida al carrito`);
   }
 };
 
@@ -53,7 +51,7 @@ const noTenemosPrenda = () => {
 };
 
 // FLUJO PRINCIPAL DEL PROGRAMA
-categoria = prompt("Hola, Bienvenid@ a Dasa! \n¿Qué categoría de prendas estás buscando? (bebes/nenas/nenes)?  ");
+categoria = prompt("Hola, Bienvenid@ a Dasa.\n¿Qué categoría de ropa busca (bebes/nenas/nenes)?  ");
 
 if (opciones.includes(categoria)) {
   buscarPrenda();
