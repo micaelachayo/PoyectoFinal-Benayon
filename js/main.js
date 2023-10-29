@@ -1,7 +1,7 @@
-//VARIABES
+// Variables
+let categoria;
 let montoTotal = 0;
 let carrito = [];
-let categoria;
 
 // Arrays para almacenar información sobre las prendas y categorías
 let opciones = ["bebes", "nenas", "nenes"];
@@ -21,7 +21,7 @@ let precios = {
   remera: 32044,
 };
 
-//FUNCIONES
+// Funciones
 const buscarPrenda = () => {
   prenda = prompt(
     `¿Qué prenda busca para su ${categoria}? (Ingrese "nada" para terminar)`
@@ -29,20 +29,24 @@ const buscarPrenda = () => {
 };
 
 const preciosPrenda = (prenda, precio) => {
-  montoTotal += precio;
+
   alert(
-    `La prenda que busca ${prenda} cuesta $${precio}.\nMonto total hasta ahora $${montoTotal}`
+    `La prenda que busca ${prenda} cuesta $${precio}.`
   );
-  console.log(`Monto total: $${montoTotal}`);
+
 };
 
 const respuestaCarrito = (prenda, precio) => {
   montoTotal += precio;
   const respuesta = prompt("¿Desea agregar la prenda al carrito? (si/no)");
   if (respuesta.toLowerCase() === "si") {
-    carrito.forEach((ropa) => console.log(ropa));
     carrito.push(`${prenda} = $${precio}`);
-    alert(`Su prenda "${prenda}" fue añadida al carrito`);
+    console.log ("**************");
+    console.log("Contenido del carrito:");
+    carrito.forEach((ropa) => console.log(ropa));
+    console.log ("--------------");
+    console.log(`Monto total: $${montoTotal}`);
+    alert(`Su prenda ${prenda} fue añadida al carrito. \nMonto total: $${montoTotal}`);
   }
 };
 
@@ -50,8 +54,14 @@ const noTenemosPrenda = () => {
   alert("Lamentamos, esa prenda no la tenemos en nuestra tienda");
 };
 
-// FLUJO PRINCIPAL DEL PROGRAMA
-categoria = prompt("Hola, Bienvenid@ a Dasa.\n¿Qué categoría de ropa busca (bebes/nenas/nenes)?  ");
+// Añade esta función para filtrar las prendas válidas
+const obtenerPrendasValidas = (categoria) => {
+  return opciones.includes(categoria) ? prendas[categoria] : [];
+};
+
+// Flujo principal del programa
+categoria = prompt("Hola, Bienvenid@.\n¿Qué categoría de ropa busca (bebes/nenas/nenes)?  ");
+
 
 if (opciones.includes(categoria)) {
   buscarPrenda();
@@ -74,7 +84,7 @@ if (opciones.includes(categoria)) {
 
   // Mostrar el contenido del carrito
   if (carrito.length > 0) {
-    alert(`Contenido del carrito: ${carrito.join(", ")}. \nGracias por elegirnos!!`);
+    alert(`Contenido del carrito: ${carrito.join(", ") }.\nMonto total: $${montoTotal} \nGracias por elegirnos!!`);
   } else {
     alert("Gracias, nos vemos la próxima");
   }
