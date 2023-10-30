@@ -41,11 +41,9 @@ const respuestaCarrito = (prenda, precio) => {
   const respuesta = prompt("¿Desea agregar la prenda al carrito? (si/no)");
   if (respuesta.toLowerCase() === "si") {
     carrito.push(`${prenda} = $${precio}`);
-    console.log ("**************");
-    console.log("Contenido del carrito:");
-    carrito.forEach((ropa) => console.log(ropa));
-    console.log ("--------------");
-    console.log(`Monto total: $${montoTotal}`);
+    console.log("*********************\nContenido del carrito:");
+    carrito.forEach((ropa) => console.log(ropa));;
+    console.log(`------------\nMonto total: $${montoTotal}`);
     alert(`Su prenda ${prenda} fue añadida al carrito. \nMonto total: $${montoTotal}`);
   }
 };
