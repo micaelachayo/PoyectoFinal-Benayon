@@ -1,91 +1,265 @@
-// Variables
-let categoria;
-let montoTotal = 0;
-let carrito = [];
+const productos = [
+  {
+    id: "bodyc001",
+    titulo: "body",
+    imagen: "../assets/bebes/cod001-body.webp",
+    imagen2: "../assets/bebes/cod001-bodyazul.webp",
+    precio: 5000,
+    tamanos: ["tamaño", "3 meses", "6 meses", "9 meses"],
+    colores: ["pink", "blue", "red"],
+    categoria: {
+      id: "bebes",
+      nombre: "body",
+    },
+  },
+  {
+    id: "pantalonc002",
+    titulo: "pantalon",
+    imagen: "../assets/bebes/cod002-pantalonRosa.webp",
+    imagen2: "../assets/bebes/cod002-rojo.webp",
+    imagen3: "../assets/bebes/cod002gris.webp",
+    precio: 5000,
+    tamanos: ["tamaño", "3 meses", "6 meses", "9 meses"],
+    colores: ["white", "blue", "red"],
+    categoria: {
+      id: "bebes",
+      nombre: "pantalon",
+    },
+  },
+  {
+    id: "shortc003",
+    titulo: "short",
+    imagen: "../assets/bebes/cod003-negro.webp",
+    imagen2: "../assets/bebes/cod003-short.webp",
+    precio: 5000,
+    tamanos: [
+      "tamaño",
+      "Recién nacido",
+      "3 meses",
+      "6 meses",
+      "9 meses",
+      "12 meses",
+      "18 meses",
+      "24 meses",
+    ],
+    colores: ["blue", "pink", "black"],
+    categoria: {
+      id: "bebes",
+      nombre: "short",
+    },
+  },
+  {
+    id: "gorrac004",
+    titulo: "gorra",
+    imagen: "../assets/bebes/cod004-gorroRosa.webp",
+    imagen2: "../assets/bebes/cod004-negro.webp",
+    precio: 4500,
+    tamanos: ["tamaño", "Recien nacido", "3 meses", "6 meses"],
+    colores: ["pink", "white", "blue"],
+    categoria: {
+      id: "bebes",
+      nombre: "gorra",
+    },
+  },
+  {
+    id: "camperac005",
+    titulo: "body",
+    imagen: "../assets/bebes/cod005-campera.webp",
+    imagen2: "../assets/bebes/cod005-campera1.webp",
+    precio: 5000,
+    tamanos: [
+      "tamaño",
+      "3 meses",
+      "6 meses",
+      "9 meses",
+      "12meses",
+      "18 meses",
+      "24 meses",
+    ],
+    colores: ["pink", "grey", "black"],
+    categoria: {
+      id: "bebes",
+      nombre: "campera",
+    },
+  },
+  {
+    id: "bodyc006",
+    titulo: "body-rayado",
+    imagen: "../assets/bebes/cod006-bodyrayado.webp",
+    imagen2: "../assets/bebes/cod006-azul.webp",
+    imagen2: "../assets/bebes/cod006-baige.webp",
+    precio: 5000,
+    tamanos: ["tamaño", "3 meses", "6 meses", "9 meses", "12 meses"],
+    colores: ["white", "blue", "red", "pink"],
+    categoria: {
+      id: "bebes",
+      nombre: "body",
+    },
+  },
 
-// Arrays para almacenar información sobre las prendas y categorías
-let opciones = ["bebes", "nenas", "nenes"];
-let prendas = {
-  bebes: ["body", "enterito"],
-  nenes: ["camisa", "pantalon"],
-  nenas: ["remera", "pollera", "vestido"],
-};
+  {
+    id: "puloverc007",
+    titulo: "pulover ",
+    imagen: "../assets/bebes/cod007-pulover.webp",
+    imagen2: "../assets/bebes/cod007-rosa.webp",
+    precio: 5000,
+    tamanos: ["tamaño", "3 meses", "6 meses", "9 meses"],
+    colores: ["white", "blue", "red"],
+    categoria: {
+      id: "bebes",
+      nombre: "pulover ",
+    },
+  },
+  {
+    id: "piuloverCandyc008",
+    titulo: "Pulover Candy",
+    imagen: "../assets/bebes/cod008-puloverCandy.webp",
+    imagen: "../assets/bebes/cod008-negro.webp",
+    precio: 5000,
+    tamanos: ["9 meses", "12 meses", "18 meses", "24 meses"],
+    colores: ["white", "blue", "pink"],
+    categoria: {
+      id: "bebes",
+      nombre: "pulover",
+    },
+  },
+];
 
-let precios = {
-  body: 6400,
-  enterito: 4780,
-  vestido: 8100,
-  pollera: 5600,
-  camisa: 7300,
-  pantalon: 10780,
-  remera: 32044,
-};
+const contenedorProductos = document.querySelector("#contenedorProductos");
 
-// Funciones
-const buscarPrenda = () => {
-  prenda = prompt(
-    `¿Qué prenda busca para su ${categoria}? (Ingrese "nada" para terminar)`
-  );
-};
-
-const preciosPrenda = (prenda, precio) => {
-
-  alert(
-    `La prenda que busca ${prenda} cuesta $${precio}.`
-  );
-
-};
-
-const respuestaCarrito = (prenda, precio) => {
-  montoTotal += precio;
-  const respuesta = prompt("¿Desea agregar la prenda al carrito? (si/no)");
-  if (respuesta.toLowerCase() === "si") {
-    carrito.push(`${prenda} = $${precio}`);
-    console.log("*********************\nContenido del carrito:");
-    carrito.forEach((ropa) => console.log(ropa));;
-    console.log(`------------\nMonto total: $${montoTotal}`);
-    alert(`Su prenda ${prenda} fue añadida al carrito. \nMonto total: $${montoTotal}`);
-  }
-};
-
-const noTenemosPrenda = () => {
-  alert("Lamentamos, esa prenda no la tenemos en nuestra tienda");
-};
-
-// Añade esta función para filtrar las prendas válidas
-const obtenerPrendasValidas = (categoria) => {
-  return opciones.includes(categoria) ? prendas[categoria] : [];
-};
-
-// Flujo principal del programa
-categoria = prompt("Hola, Bienvenid@.\n¿Qué categoría de ropa busca (bebes/nenas/nenes)?  ");
-
-
-if (opciones.includes(categoria)) {
-  buscarPrenda();
-  while (prenda.toLowerCase() !== "nada") {
-    if (prendas[categoria].includes(prenda)) {
-      preciosPrenda(prenda, precios[prenda]);
-      respuestaCarrito(prenda, precios[prenda]);
-    } else {
-      noTenemosPrenda();
-    }
-    const continuarBuscando = prompt(
-      "¿Desea seguir buscando otra prenda? (Sí/No)"
-    ).toLowerCase();
-    if (continuarBuscando === "si") {
-      buscarPrenda();
-    } else {
-      break; // Sale del bucle si no desea buscar más prendas
-    }
-  }
-
-  // Mostrar el contenido del carrito
-  if (carrito.length > 0) {
-    alert(`Contenido del carrito: ${carrito.join(", ") }.\nMonto total: $${montoTotal} \nGracias por elegirnos!!`);
-  } else {
-    alert("Gracias, nos vemos la próxima");
-  }
-} else {
-  alert("Lamentamos, no tenemos esa categoría de prendas en la tienda");
+// Función para agregar un producto al carrito
+function agregarAlCarrito(producto) {
+  const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+ console.log(producto);
+  carrito.push(producto);
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+  console.log("Producto agregado al carrito:", producto);
 }
+
+function quitarDelCarrito(producto) {
+  const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+  const nuevoCarrito = carrito.filter((item) => item.id !== producto.id);
+  localStorage.setItem("carrito", JSON.stringify(nuevoCarrito));
+  console.log("Producto eliminado del carrito:", producto);
+}
+
+// Función para alternar el estado del corazón y agregar o quitar un producto del carrito
+function toggleCorazon(event, producto) {
+  const corazon = event.target;
+  if (corazon.classList.contains("love")) {
+    corazon.classList.remove("love");
+    quitarDelCarrito(producto);
+  } else {
+    corazon.classList.add("love");
+    agregarAlCarrito(producto);
+    Swal.fire({
+      position: "top-center",
+      icon: "success",
+      title: "Tu prenda ha sido agregada",
+      showConfirmButton: false,
+      timer: 2500
+    });
+  }
+}
+
+// Ejemplo de cómo configurar el evento de clic en el corazón en tu interfaz de usuario
+const botonesCorazon = document.querySelectorAll(".corazon");
+botonesCorazon.forEach(corazon => {
+  corazon.addEventListener("click", event => {
+    const productoId = corazon.getAttribute("data-producto-id");
+    const producto = productos.find(p => p.id === productoId);
+    console.log(producto);
+    if (producto) {
+      toggleCorazon(event, producto);
+    }
+  });
+});
+
+function cargarProductos() {
+  productos.forEach((prenda, index) => {
+    const article = document.createElement("article");
+    article.setAttribute("data-aos", "fade-up");
+    article.setAttribute("data-aos-duration", "2500");
+    article.classList.add("card", `card-${index + 1}`, "col-3", "me-2");
+
+    //funcion para los botones de colores
+    const coloresHTML = prenda.colores
+      .map((color) => `<button class="${color}"></button>`)
+      .join("");
+
+    //funcion para un segundo carrusel si es que esxiste una seguna imagen.
+    const carouselItem2 = prenda.imagen2
+      ? `<div class="carousel-item">
+          <img
+            src="${prenda.imagen2}"
+            class="d-block w-100"
+            alt="c001"
+            height="272"
+          />
+        </div>`
+      : "";
+    //agregando contenido al html
+    article.innerHTML = ` <!-- carrusel -->
+  <div id="carousel-${prenda.id}" class="carousel slide">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img
+        src="${prenda.imagen}"
+        class="d-block w-100"
+        alt="c001"
+        height="272"
+      />
+    </div>
+    ${carouselItem2}
+  </div>
+
+     <button
+       class="carousel-control-prev"
+       type="button"
+       data-bs-target="#carousel-${prenda.id}"
+       data-bs-slide="prev"
+     >
+       <span
+         class="carousel-control-prev-icon"
+         aria-hidden="true"
+       ></span>
+       <span class="visually-hidden">Previous</span>
+     </button>
+     <button
+       class="carousel-control-next"
+       type="button"
+       data-bs-target="#carousel-${prenda.id}"
+      data-bs-slide="next"
+     >
+       <span
+         class="carousel-control-next-icon"
+         aria-hidden="true"
+       ></span>
+       <span class="visually-hidden">Next</span>
+     </button>
+   </div>
+   <div class="descripcion">
+   <p class="card-text fw-bold">${prenda.titulo}</p>
+   <p>$${prenda.precio}</p>
+   <select class="form-select" aria-label="Default select example">
+     ${prenda.tamanos
+       .map((tamano, index) => `<option value="${index}">${tamano}</option>`)
+       .join("")}
+   </select>
+ </div>
+
+ <!-- color de prendas -->
+ <div class="color-botones d-flex justify-content-center">
+   ${coloresHTML}
+   <img id="like" class="mt-1  " src="../assets/iconos/corazon.svg" alt="likes" height="28px" width="28px" />
+ </div>
+`;
+   // Agrega el artículo al contenedor de productos
+   contenedorProductos.appendChild(article);
+
+   // Agregar un manejador de eventos al corazón
+   const corazon = article.querySelector("#like");
+   corazon.addEventListener("click", toggleCorazon);
+ });
+}
+cargarProductos();

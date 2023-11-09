@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: stayTrueDemo;
   src: url(../fonts/StaytrueDemo-Italic.otf);
@@ -296,6 +297,13 @@ main h4 {
 }
 .grey:hover {
   background: linear-gradient(45deg, rgb(164, 200, 206), 45px, transparent 45px) 64px 64px, linear-gradient(45deg, rgb(164, 200, 206), 45px, transparent 45px, transparent 91px, rgba(221, 199, 205, 0.918) 91px, rgba(221, 199, 205, 0.918) 135px, transparent 135px), linear-gradient(-45deg, rgb(164, 200, 206) 23px, transparent 23px, transparent 68px, rgb(164, 200, 206) 68px, rgb(164, 200, 206) 113px, transparent 113px, transparent 158px, rgb(164, 200, 206) 158px);
+}
+
+/* Corazón vacío */
+.love {
+  background-image: url("../assets/iconos/corazon-lleno.jpeg");
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 footer {
