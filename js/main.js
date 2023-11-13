@@ -4,7 +4,7 @@ const productos = [
     titulo: "body",
     imagen: "../assets/bebes/cod001-body.webp",
     imagen2: "../assets/bebes/cod001-bodyazul.webp",
-    precio: 5000,
+    precio: 5300,
     tamanos: ["tamaño", "3 meses", "6 meses", "9 meses"],
     colores: ["pink", "blue", "red"],
     categoria: {
@@ -18,7 +18,7 @@ const productos = [
     imagen: "../assets/bebes/cod002-pantalonRosa.webp",
     imagen2: "../assets/bebes/cod002-rojo.webp",
     imagen3: "../assets/bebes/cod002gris.webp",
-    precio: 5000,
+    precio: 8130,
     tamanos: ["tamaño", "3 meses", "6 meses", "9 meses"],
     colores: ["white", "blue", "red"],
     categoria: {
@@ -31,7 +31,7 @@ const productos = [
     titulo: "short",
     imagen: "../assets/bebes/cod003-negro.webp",
     imagen2: "../assets/bebes/cod003-short.webp",
-    precio: 5000,
+    precio: 6100,
     tamanos: [
       "tamaño",
       "Recién nacido",
@@ -66,7 +66,7 @@ const productos = [
     titulo: "body",
     imagen: "../assets/bebes/cod005-campera.webp",
     imagen2: "../assets/bebes/cod005-campera1.webp",
-    precio: 5000,
+    precio: 10500,
     tamanos: [
       "tamaño",
       "3 meses",
@@ -88,7 +88,7 @@ const productos = [
     imagen: "../assets/bebes/cod006-bodyrayado.webp",
     imagen2: "../assets/bebes/cod006-azul.webp",
     imagen2: "../assets/bebes/cod006-baige.webp",
-    precio: 5000,
+    precio: 8700,
     tamanos: ["tamaño", "3 meses", "6 meses", "9 meses", "12 meses"],
     colores: ["white", "blue", "red", "pink"],
     categoria: {
@@ -102,7 +102,7 @@ const productos = [
     titulo: "pulover ",
     imagen: "../assets/bebes/cod007-pulover.webp",
     imagen2: "../assets/bebes/cod007-rosa.webp",
-    precio: 5000,
+    precio: 7300,
     tamanos: ["tamaño", "3 meses", "6 meses", "9 meses"],
     colores: ["white", "blue", "red"],
     categoria: {
@@ -115,7 +115,7 @@ const productos = [
     titulo: "Pulover Candy",
     imagen: "../assets/bebes/cod008-puloverCandy.webp",
     imagen: "../assets/bebes/cod008-negro.webp",
-    precio: 5000,
+    precio: 6450,
     tamanos: ["9 meses", "12 meses", "18 meses", "24 meses"],
     colores: ["white", "blue", "pink", "black"],
     categoria: {
