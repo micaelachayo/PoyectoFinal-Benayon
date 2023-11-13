@@ -6,7 +6,6 @@
   .card-#{$i} {
     width: $card-width * 2;
     @include filter;
-
     img {
       @include imagenes(1.2);
     }
@@ -19,6 +18,7 @@
     padding: 0.7rem;
     border-radius: 100%;
     margin: 5px;
+    cursor: pointer;
     &:hover {
       background: $estampados;
     }
@@ -29,4 +29,7 @@
   background-image: url("../assets/iconos/corazon-lleno.jpeg");
   background-size: contain;
   background-repeat: no-repeat;
+}
+.borde-oscuro{
+  border: 100px, solid yellow;
 }

@@ -117,7 +117,7 @@ const productos = [
     imagen: "../assets/bebes/cod008-negro.webp",
     precio: 5000,
     tamanos: ["9 meses", "12 meses", "18 meses", "24 meses"],
-    colores: ["white", "blue", "pink"],
+    colores: ["white", "blue", "pink", "black"],
     categoria: {
       id: "bebes",
       nombre: "pulover",
@@ -126,26 +126,9 @@ const productos = [
 ];
 
 const contenedorProductos = document.querySelector("#contenedorProductos");
-
-// Función para agregar un producto al carrito
-function agregarAlCarrito(producto) {
-  const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
- console.log(producto);
-  carrito.push(producto);
-  localStorage.setItem("carrito", JSON.stringify(carrito));
-  console.log("Producto agregado al carrito:", producto);
-}
-
-function quitarDelCarrito(producto) {
-  const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-  const nuevoCarrito = carrito.filter((item) => item.id !== producto.id);
-  localStorage.setItem("carrito", JSON.stringify(nuevoCarrito));
-  console.log("Producto eliminado del carrito:", producto);
-}
-
 // Función para alternar el estado del corazón y agregar o quitar un producto del carrito
 function toggleCorazon(event, producto) {
-  const corazon = event.target;
+  const corazon = event.target; //el evento se hace al apretar el corazon
   if (corazon.classList.contains("love")) {
     corazon.classList.remove("love");
     quitarDelCarrito(producto);
@@ -157,30 +140,17 @@ function toggleCorazon(event, producto) {
       icon: "success",
       title: "Tu prenda ha sido agregada",
       showConfirmButton: false,
-      timer: 2500
+      timer: 2500,
     });
   }
 }
 
-// Ejemplo de cómo configurar el evento de clic en el corazón en tu interfaz de usuario
-const botonesCorazon = document.querySelectorAll(".corazon");
-botonesCorazon.forEach(corazon => {
-  corazon.addEventListener("click", event => {
-    const productoId = corazon.getAttribute("data-producto-id");
-    const producto = productos.find(p => p.id === productoId);
-    console.log(producto);
-    if (producto) {
-      toggleCorazon(event, producto);
-    }
-  });
-});
-
 function cargarProductos() {
   productos.forEach((prenda, index) => {
-    const article = document.createElement("article");
-    article.setAttribute("data-aos", "fade-up");
-    article.setAttribute("data-aos-duration", "2500");
-    article.classList.add("card", `card-${index + 1}`, "col-3", "me-2");
+    const card = document.createElement("article");
+    card.setAttribute("data-aos", "fade-up");
+    card.setAttribute("data-aos-duration", "2500");
+    card.classList.add("card", `card-${index + 1}`, "col-3", "me-2");
 
     //funcion para los botones de colores
     const coloresHTML = prenda.colores
@@ -199,7 +169,7 @@ function cargarProductos() {
         </div>`
       : "";
     //agregando contenido al html
-    article.innerHTML = ` <!-- carrusel -->
+    card.innerHTML = ` <!-- carrusel -->
   <div id="carousel-${prenda.id}" class="carousel slide">
   <div class="carousel-inner">
     <div class="carousel-item active">
@@ -214,6 +184,7 @@ function cargarProductos() {
   </div>
 
      <button
+     id=" boton-elegido"
        class="carousel-control-prev"
        type="button"
        data-bs-target="#carousel-${prenda.id}"
@@ -249,17 +220,18 @@ function cargarProductos() {
  </div>
 
  <!-- color de prendas -->
- <div class="color-botones d-flex justify-content-center">
+ <div id="boton-colores" class="borde-oscuro color-botones d-flex justify-content-center">
    ${coloresHTML}
    <img id="like" class="mt-1  " src="../assets/iconos/corazon.svg" alt="likes" height="28px" width="28px" />
  </div>
 `;
-   // Agrega el artículo al contenedor de productos
-   contenedorProductos.appendChild(article);
+    // Agrega el artículo al contenedor de productos
+    contenedorProductos.appendChild(card);
 
-   // Agregar un manejador de eventos al corazón
-   const corazon = article.querySelector("#like");
-   corazon.addEventListener("click", toggleCorazon);
- });
+    // Agregar un manejador de eventos al corazón
+    const corazon = card.querySelector("#like");
+    corazon.addEventListener("click", (e) => toggleCorazon(e, prenda));
+  });
 }
+
 cargarProductos();

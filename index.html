@@ -19,7 +19,7 @@
   </head>
   <body>
     <!-- Header -->
-    <header class="container-fluid header">
+    <header id="header" class="container-fluid header">
       <div class="row">
         <div
           class="col-3 col-md-3 d-flex justify-content-center align-items-center"
@@ -41,12 +41,14 @@
           />
 
           <img
+          id="carrito-icon"
             class="header-img"
             src="./assets/iconos/carrito.svg"
             alt="carrito"
             width="28"
             height="28"
           />
+          <span  id="contador">0</span>
         </div>
 
         <!-- titulo -->
@@ -295,7 +297,7 @@
         </div>
       </div>
     </footer>
-
+<script src="./js/headerIndex.js"></script>
     <script src="./js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
