@@ -8,6 +8,7 @@
     @include filter;
     img {
       @include imagenes(1.2);
+      
     }
   }
 }

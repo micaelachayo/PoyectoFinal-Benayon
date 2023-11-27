@@ -5,9 +5,7 @@ function inicializarCarrito() {
   actualizarContador(contador);
 
   // Mostrar el carrito si no está vacío
-  if (contador > 0) {
-    console.log("El carrito no está vacío. Mostrar carrito.");
-  }
+  contador > 0 ? console.log("El carrito no está vacío. Mostrar carrito.") : null;
 }
 
 //--------------------------------------------------------------------------------------
@@ -28,7 +26,7 @@ function agregarAlCarrito(producto) {
     icon: "success",
     title: "Su prenda ha sido agragada",
     showConfirmButton: false,
-    timer: 1000,
+    timer: 3000,
   });
 }
 
@@ -49,7 +47,7 @@ function quitarDelCarrito(producto) {
 }
 
 //--------------------------------------------------------------------
-//ACTUALIZA EL CONTADOR PARA AGREGAR O QUITAR DEL CARRITO
+//Funcion para el corazon
 function toggleCorazon(event, producto) {
   const corazon = event.target;
   if (corazon.classList.contains("love")) {
@@ -62,8 +60,8 @@ function toggleCorazon(event, producto) {
 }
 // Función para resetear los corazones
 function resetearCorazones() {
-  document.querySelectorAll('.love').forEach(corazon => {
-    corazon.classList.remove('love');
+  document.querySelectorAll(".love").forEach((corazon) => {
+    corazon.classList.remove("love");
   });
 }
 
@@ -115,7 +113,6 @@ function confirmarFinalizarCompra() {
     } else {
       Swal.fire("Continúe comprando", "", "info");
       // El carrito sigue normal si el usuario elige no finalizar la compra
-  
     }
   });
 }
@@ -130,8 +127,8 @@ function actualizarContador() {
   const contadorActualizado = carritoActualizado.length;
   document.getElementById("contador").textContent = contadorActualizado;
 }
+
 //---------------------------------------------------------------------------------------------
-// FUNCION PARA MOSTRAR EL CARRITO EN UN ALERT
 // Llama a la función de inicialización al cargar la página
 document.addEventListener("DOMContentLoaded", inicializarCarrito);
 function mostrarCarrito() {
@@ -154,14 +151,13 @@ function mostrarCarrito() {
                           }1">Borrar</button>
                         </div>`;
 
-    totalPagar += producto.precio; 
-  
+    totalPagar += producto.precio;
   });
 
   // Agregar el total al contenido del alert
   alertContentHTML += `<div>Total a pagar: $${totalPagar.toFixed(2)}</div>`;
   alertContentHTML += "</div>";
-  
+
   // Mostrar el alert con el contenido del carrito
   Swal.fire({
     title: "Carrito de compras",
@@ -169,9 +165,11 @@ function mostrarCarrito() {
     showCancelButton: false,
     showConfirmButton: false,
     showCloseButton: true, // Agrega un botón de cierre en la esquina superior derecha
-    footer: carrito.length > 0 ? '<button id="finalizarCompra">Finalizar compra</button>' : '', // Agrega el botón de finalizar compra solo si el carrito no está vacío
+    footer:
+      carrito.length > 0
+        ? '<button id="finalizarCompra">Finalizar compra</button>'
+        : "", // Agrega el botón de finalizar compra solo si el carrito no está vacío
   });
-
 
   // Agregar eventos de clic a los botones de borrar
   document.querySelectorAll(".boton-borrar").forEach((boton) => {
@@ -180,14 +178,13 @@ function mostrarCarrito() {
       confirmarEliminarProducto(productoId);
     });
   });
-   // Agregar evento de clic al botón de finalizar compra
-   document.getElementById('finalizarCompra').addEventListener('click', () => {
+  // Agregar evento de clic al botón de finalizar compra
+  document.getElementById("finalizarCompra").addEventListener("click", () => {
     confirmarFinalizarCompra();
   });
-
 }
 
-let carritoIcono = document.getElementById("carrito-icon");
+const carritoIcono = document.getElementById("carrito-icon");
 carritoIcono.addEventListener("click", function () {
   // Muestra el carrito en lugar del mensaje de alerta
   mostrarCarrito();

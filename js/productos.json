@@ -1,0 +1,126 @@
+[
+    {
+      "id": "bodyc001",
+      "titulo": "body",
+      "imagen": "../assets/bebes/cod001-body.webp",
+      "imagen2": "../assets/bebes/cod001-bodyazul.webp",
+      "precio": 5300,
+      "tamanos": ["tamaño", "3 meses", "6 meses", "9 meses"],
+     "colores": ["pink", "blue", "red"],
+      "categoria": {
+        "id": "bebes",
+        "nombre": "body"
+      }
+    },
+    {
+      "id": "pantalonc002",
+      "titulo": "pantalon",
+      "imagen": "../assets/bebes/cod002-pantalonRosa.webp",
+      "imagen2": "../assets/bebes/cod002-rojo.webp",
+      "imagen3": "../assets/bebes/cod002gris.webp",
+      "precio": 8130,
+      "tamanos": ["tamaño", "3 meses", "6 meses", "9 meses"],
+      "colores": ["white", "blue", "red"],
+      "categoria": {
+        "id": "bebes",
+        "nombre": "pantalon"
+      }
+    },
+    {
+      "id": "shortc003",
+      "titulo": "short",
+      "imagen": "../assets/bebes/cod003-negro.webp",
+      "imagen2": "../assets/bebes/cod003-short.webp",
+      "precio": 6100,
+      "tamanos": [
+        "tamaño",
+        "Recién nacido",
+        "3 meses",
+        "6 meses",
+        "9 meses",
+        "12 meses",
+        "18 meses",
+        "24 meses"
+      ],
+      "colores": ["blue", "pink", "black"],
+      "categoria": {
+        "id": "bebes",
+        "nombre": "short"
+      }
+    },
+    {
+      "id": "gorrac004",
+      "titulo": "gorra",
+      "imagen": "../assets/bebes/cod004-gorroRosa.webp",
+      "imagen2": "../assets/bebes/cod004-negro.webp",
+      "precio": 4500,
+      "tamanos": ["tamaño", "Recien nacido", "3 meses", "6 meses"],
+      "colores": ["pink", "white", "blue"],
+      "categoria": {
+        "id": "bebes",
+        "nombre": "gorra"
+      }
+    },
+    {
+      "id": "camperac005",
+      "titulo": "body",
+      "imagen": "../assets/bebes/cod005-campera.webp",
+      "imagen2": "../assets/bebes/cod005-campera1.webp",
+      "precio": 10500,
+      "tamanos": [
+        "tamaño",
+        "3 meses",
+        "6 meses",
+        "9 meses",
+        "12meses",
+        "18 meses",
+        "24 meses"
+      ],
+      "colores": ["pink", "grey", "black"],
+      "categoria": {
+        "id": "bebes",
+        "nombre": "campera"
+      }
+    },
+    {
+      "id": "bodyc006",
+      "titulo": "body-rayado",
+      "imagen": "../assets/bebes/cod006-bodyrayado.webp",
+      "imagen2": "../assets/bebes/cod006-azul.webp",
+      "imagen3": "../assets/bebes/cod006-baige.webp",
+      "precio": 8700,
+      "tamanos": ["tamaño", "3 meses", "6 meses", "9 meses", "12 meses"],
+      "colores": ["white", "blue", "red", "pink"],
+      "categoria": {
+        "id": "bebes",
+        "nombre": "body"
+      }
+    },
+  
+    {
+      "id": "puloverc007",
+      "titulo": "pulover ",
+      "imagen": "../assets/bebes/cod007-pulover.webp",
+      "imagen2": "../assets/bebes/cod007-rosa.webp",
+      "precio": 7300,
+      "tamanos": ["tamaño", "3 meses", "6 meses", "9 meses"],
+      "colores": ["white", "blue", "red"],
+      "categoria": {
+        "id": "bebes",
+        "nombre": "pulover "
+      }
+    },
+    {
+      "id": "piuloverCandyc008",
+      "titulo": "Pulover Candy",
+      "imagen": "../assets/bebes/cod008-puloverCandy.webp",
+      "imagen2": "../assets/bebes/cod008-negro.webp",
+      "precio": 6450,
+      "tamanos": ["9 meses", "12 meses", "18 meses", "24 meses"],
+      "colores": ["white", "blue", "pink", "black"],
+      "categoria": {
+        "id": "bebes",
+        "nombre": "pulover"
+      }
+    }
+  ]
