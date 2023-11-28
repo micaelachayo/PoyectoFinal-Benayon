@@ -109,6 +109,9 @@ function confirmarFinalizarCompra() {
       Swal.fire("¡Su compra ha sido exitosa!", "😊", "success");
       // Puedes realizar acciones adicionales aquí si es necesario
       resetearCarrito();
+
+      // Actualizar el contador después de la confirmación
+      actualizarContador();
     } else {
       Swal.fire("Continúe comprando", "", "info");
       // El carrito sigue normal si el usuario elige no finalizar la compra
@@ -169,14 +172,12 @@ async function mostrarCarrito() {
       carrito.length > 0
         ? '<button id="finalizarCompra">Finalizar compra</button>'
         : "El carrito esta vacio", // Agrega el botón de finalizar compra solo si el carrito no está vacío
-  }).then(() => {
-    // Después de mostrar la alerta, agrega el evento al botón
-    const btnFinalizarCompra = document.getElementById("finalizarCompra");
-    if (btnFinalizarCompra) {
-      btnFinalizarCompra.addEventListener("click", () => {
-        confirmarFinalizarCompra();
-      });
-    }
+  });
+  // Después de mostrar la alerta, agrega el evento al botón
+  const btnFinalizarCompra = document.getElementById("finalizarCompra");
+
+  btnFinalizarCompra.addEventListener("click", () => {
+    confirmarFinalizarCompra();
   });
   // Agregar eventos de clic a los botones de borrar
   document.querySelectorAll(".boton-borrar").forEach((boton) => {
