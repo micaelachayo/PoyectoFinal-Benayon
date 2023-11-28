@@ -6,27 +6,9 @@ fetch("/js/productos.json")
     cargarProductos(data);
   })
   .catch((error) => {
-    console.error('Error al obtener los datos:', error);
+    console.error("Error al obtener los datos:", error);
   });
 
-  // Función para alternar el estado del corazón y agregar o quitar un producto del carrito
-function toggleCorazon(event, producto) {
-  const corazon = event.target; //el evento se hace al apretar el corazon
-  if (corazon.classList.contains("love")) {
-    corazon.classList.remove("love");
-    quitarDelCarrito(producto);
-  } else {
-    corazon.classList.add("love");
-    agregarAlCarrito(producto);
-    Swal.fire({
-      position: "top-center",
-      icon: "success",
-      title: "Tu prenda ha sido agregada",
-      showConfirmButton: false,
-      timer: 2500,
-    });
-  }
-}
 function cargarProductos(productos) {
   productos.forEach((prenda, index) => {
     const card = document.createElement("article");
@@ -34,14 +16,14 @@ function cargarProductos(productos) {
     card.setAttribute("data-aos-duration", "2500");
     card.classList.add("card", `card-${index + 1}`, "col-3", "me-2");
 
-     //función para los botones de colores
-     const coloresHTML = prenda.colores
-     .map((color) => `<button class="${color}"></button>`)
-     .join("");
+    //función para los botones de colores
+    const coloresHTML = prenda.colores
+      .map((color) => `<button class="${color}"></button>`)
+      .join("");
 
-   //función para un segundo carrusel si es que existe una segunda imagen.
-   const carouselItem2 = prenda.imagen2
-     ? `<div class="carousel-item">
+    //función para un segundo carrusel si es que existe una segunda imagen.
+    const carouselItem2 = prenda.imagen2
+      ? `<div class="carousel-item">
          <img
            src="${prenda.imagen2}"
            class="d-block w-100"
@@ -49,9 +31,9 @@ function cargarProductos(productos) {
            height="272"
          />
        </div>`
-     : "";
-   const carouselItem3 = prenda.imagen3
-     ? `<div class="carousel-item">
+      : "";
+    const carouselItem3 = prenda.imagen3
+      ? `<div class="carousel-item">
          <img
            src="${prenda.imagen3}"
            class="d-block w-100"
@@ -59,9 +41,9 @@ function cargarProductos(productos) {
            height="272"
          />
        </div>`
-     : "";
-   //agregando contenido al HTML
-   card.innerHTML = ` <!-- carrusel -->
+      : "";
+    //agregando contenido al HTML
+    card.innerHTML = ` <!-- carrusel -->
  <div id="carousel-${prenda.id}" class="carousel slide">
  <div class="carousel-inner">
    <div class="carousel-item active">
@@ -113,15 +95,19 @@ function cargarProductos(productos) {
 </div>
 
 <!-- color de prendas -->
-<div id="boton-colores" class="borde-oscuro color-botones d-flex justify-content-center">
+<div id="boton-colores-${
+      index + 1
+    }" class="borde-oscuro color-botones d-flex justify-content-center">
   ${coloresHTML}
-  <img id="like" class="mt-1  " src="../assets/iconos/corazon.svg" alt="likes" height="28px" width="28px" />
+  <img id="like-${
+    index + 1
+  }" class="mt-1  " src="../assets/iconos/corazon.svg" alt="likes" height="28px" width="28px" />
 </div>
 `;
     // Agrega el artículo al contenedor de productos
     contenedorProductos.appendChild(card);
-        // Agregar un manejador de eventos al corazón
-        const corazon = card.querySelector("#like");
-        corazon.addEventListener("click", (e) => toggleCorazon(e, prenda));
-      });
+    // Agregar un manejador de eventos al corazón
+    const corazon = card.querySelector(`#like-${index + 1}`);
+    corazon.addEventListener("click", (e) => toggleCorazon(e, prenda));
+  });
 }

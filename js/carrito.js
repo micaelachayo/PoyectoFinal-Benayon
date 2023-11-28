@@ -5,12 +5,14 @@ function inicializarCarrito() {
   actualizarContador(contador);
 
   // Mostrar el carrito si no está vacío
-  contador > 0 ? console.log("El carrito no está vacío. Mostrar carrito.") : null;
+  if (contador > 0) {
+    console.log("El carrito no está vacío. Mostrar carrito.");
+  }
 }
 
 //--------------------------------------------------------------------------------------
 //AGREGAR AL CARRITO
-function agregarAlCarrito(producto) {
+async function agregarAlCarrito(producto) {
   const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
   carrito.push(producto);
   localStorage.setItem("carrito", JSON.stringify(carrito));
@@ -19,19 +21,10 @@ function agregarAlCarrito(producto) {
 
   // Actualiza el contador después de agregar un producto
   const contador = carrito.length;
-  actualizarContador(contador);
-
-  Swal.fire({
-    position: "top-center",
-    icon: "success",
-    title: "Su prenda ha sido agragada",
-    showConfirmButton: false,
-    timer: 3000,
-  });
+  await actualizarContador(contador);
 }
-
 //-----------------------------------------------------------------------------------
-//QUITAR DEL CARRITO
+//QUITAR DEL CARRITO CUANDO HAGO CLICK EN EL CORAZON Y CAMBIAR NUMERITO
 function quitarDelCarrito(producto) {
   const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
   const nuevoCarrito = carrito.filter((item) => item.id !== producto.id);
@@ -47,15 +40,23 @@ function quitarDelCarrito(producto) {
 }
 
 //--------------------------------------------------------------------
-//Funcion para el corazon
+// Función para alternar el estado del corazón y agregar o quitar un producto del carrito
 function toggleCorazon(event, producto) {
-  const corazon = event.target;
+  const corazon = event.target; //el evento se hace al apretar el corazon
   if (corazon.classList.contains("love")) {
     corazon.classList.remove("love");
     quitarDelCarrito(producto);
   } else {
     corazon.classList.add("love");
     agregarAlCarrito(producto);
+    Swal.fire({
+      title: `Ya está en el carrito`,
+      text: producto.titulo + "=$" + producto.precio,
+      imageUrl: producto.imagen,
+      imageWidth: 200,
+      imageHeight: 200,
+      imageAlt: producto.id,
+    });
   }
 }
 // Función para resetear los corazones
@@ -66,7 +67,6 @@ function resetearCorazones() {
 }
 
 //--------------------------------------------------------------------
-
 // Función para confirmar la eliminación del producto
 function confirmarEliminarProducto(productoId) {
   Swal.fire({
@@ -89,11 +89,10 @@ function confirmarEliminarProducto(productoId) {
     actualizarContador(); // Actualizar el numerito después de la confirmación
   });
 }
-
-// Función para eliminar un producto del carrito
-function eliminarProductoDelCarrito(productoId) {
+// Función para eliminar un producto que esta en el  carrito
+function eliminarProductoDelCarrito(index) {
   let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-  carrito = carrito.filter((producto) => producto.id !== productoId);
+  carrito.splice(index, 1);
   localStorage.setItem("carrito", JSON.stringify(carrito));
 }
 //-------------------------------------------------------------------------------------
@@ -122,16 +121,17 @@ function resetearCarrito() {
   actualizarContador(); // Actualiza el contador (lo pondrá en cero)
 }
 // Función para actualizar el contador en la página
-function actualizarContador() {
+async function actualizarContador() {
   const carritoActualizado = JSON.parse(localStorage.getItem("carrito")) || [];
   const contadorActualizado = carritoActualizado.length;
   document.getElementById("contador").textContent = contadorActualizado;
 }
-
 //---------------------------------------------------------------------------------------------
 // Llama a la función de inicialización al cargar la página
 document.addEventListener("DOMContentLoaded", inicializarCarrito);
-function mostrarCarrito() {
+//---------------------------------------------------------------------------------------------
+// MOSTRAR CARRITO
+async function mostrarCarrito() {
   const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
   // Crear el contenido del alert
@@ -168,9 +168,16 @@ function mostrarCarrito() {
     footer:
       carrito.length > 0
         ? '<button id="finalizarCompra">Finalizar compra</button>'
-        : "", // Agrega el botón de finalizar compra solo si el carrito no está vacío
+        : "El carrito esta vacio", // Agrega el botón de finalizar compra solo si el carrito no está vacío
+  }).then(() => {
+    // Después de mostrar la alerta, agrega el evento al botón
+    const btnFinalizarCompra = document.getElementById("finalizarCompra");
+    if (btnFinalizarCompra) {
+      btnFinalizarCompra.addEventListener("click", () => {
+        confirmarFinalizarCompra();
+      });
+    }
   });
-
   // Agregar eventos de clic a los botones de borrar
   document.querySelectorAll(".boton-borrar").forEach((boton) => {
     boton.addEventListener("click", () => {
@@ -178,12 +185,7 @@ function mostrarCarrito() {
       confirmarEliminarProducto(productoId);
     });
   });
-  // Agregar evento de clic al botón de finalizar compra
-  document.getElementById("finalizarCompra").addEventListener("click", () => {
-    confirmarFinalizarCompra();
-  });
 }
-
 const carritoIcono = document.getElementById("carrito-icon");
 carritoIcono.addEventListener("click", function () {
   // Muestra el carrito en lugar del mensaje de alerta

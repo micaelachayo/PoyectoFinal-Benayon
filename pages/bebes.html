@@ -31,26 +31,27 @@
         >
           <!-- logo de la izq -->
           <img
-          id="user"
+            id="user"
             class="header-img me-1"
             src="../assets/iconos/user.svg"
             alt="usuario"
             width="28"
             height="28"
-            data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample"
+            data-bs-toggle="offcanvas"
+            href="#offcanvasExample"
+            role="button"
+            aria-controls="offcanvasExample"
           />
-    
 
-            <img
+          <img
             id="carrito-icon"
-              class="header-img"
-              src="../assets/iconos/carrito.svg"
-              alt="carrito"
-              width="28"
-              height="28"
-            />
-            <span  id="contador">0</span>
-      
+            class="header-img"
+            src="../assets/iconos/carrito.svg"
+            alt="carrito"
+            width="28"
+            height="28"
+          />
+          <span id="contador">0</span>
         </div>
 
         <!-- titulo -->
@@ -183,9 +184,7 @@
           </div>
         </nav>
       </div>
-    
     </header>
-
 
     <!-- oferta -->
     <aside class="oferta">
@@ -302,23 +301,22 @@
                   </div>
 
                   <div class="mt-2">
-                    <form class="d-flex justify-content-between" >
+                    <form class="d-flex justify-content-between">
                       <div>
                         <div>
                           <input type="checkbox" name="rn" class="rn" />
                           <label for="rn">Recien nacidos</label>
                         </div>
-             
+
                         <div>
                           <input type="checkbox" name="3" class="3" />
                           <label for="3">3 meses</label>
                         </div>
-  
+
                         <div>
                           <input type="checkbox" name="6" class="6" />
                           <label for="6">6 meses</label>
                         </div>
-                       
                       </div>
 
                       <div>
@@ -335,9 +333,7 @@
                           <label for="18">18 meses</label>
                         </div>
                       </div>
-                    
                     </form>
-                    
                   </div>
                 </div>
               </section>
@@ -358,15 +354,26 @@
           </button>
 
           <ul class="dropdown-menu">
-            <li><a id="ordenar-mayor" class="dropdown-item" href="#">Precio de mayor a menor</a></li>
-            <li><a id="ordenar-menor" class="dropdown-item" href="#">Precio de menor a mayor</a></li>
+            <li>
+              <a id="ordenar-mayor" class="dropdown-item" href="#"
+                >Precio de mayor a menor</a
+              >
+            </li>
+            <li>
+              <a id="ordenar-menor" class="dropdown-item" href="#"
+                >Precio de menor a mayor</a
+              >
+            </li>
             <li><a id="ordenar-az" class="dropdown-item" href="#">A-Z</a></li>
             <li><a id="ordenar-za" class="dropdown-item" href="#">Z-A</a></li>
           </ul>
         </div>
       </section>
 
-      <div id="contenedorProductos"class="row justify-content-center pb-5 row-gap-3 p-2">
+      <div
+        id="contenedorProductos"
+        class="row justify-content-center pb-5 row-gap-3 p-2"
+      >
         <!-- articulos agregados desde js -->
       </div>
       <div class="row pb-5">
@@ -442,8 +449,7 @@
       </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="../js/user.js"></script>
- <script src="../js/carrito.js"></script>
+    <script src="../js/carrito.js"></script>
     <script src="../js/main.js"></script>
     <script src="../js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
