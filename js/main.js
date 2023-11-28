@@ -1,6 +1,6 @@
 const contenedorProductos = document.querySelector("#contenedorProductos");
 
-fetch("http://127.0.0.1:5501/js/productos.json")
+fetch("https://micaelachayo.github.io/PoyectoFinal-Benayon/js/productos.json")
   .then((response) => response.json())
   .then((data) => {
     cargarProductos(data);
