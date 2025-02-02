@@ -97,7 +97,7 @@ function cargarProductos(productos) {
 <!-- color de prendas -->
 <div id="boton-colores-${
       index + 1
-    }" class="borde-oscuro color-botones d-flex justify-content-center">
+    }" class="color-botones d-flex justify-content-center">
   ${coloresHTML}
   <img id="like-${
     index + 1
